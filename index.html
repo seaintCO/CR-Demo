@@ -1,12 +1,21 @@
-<html lang="en" class="dark"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CR OS | Autonomous Construction Intelligence</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    />
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -24,527 +33,285 @@
                         }
                     },
                     backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px)",
+                        'grid-pattern':
+                            "linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px)",
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-neutral-950 text-neutral-300 font-sans antialiased h-screen w-screen overflow-hidden flex flex-col md:flex-row selection:bg-neutral-800 selection:text-white">
+
+<body class="bg-neutral-950 text-neutral-300 font-sans antialiased min-h-screen w-screen overflow-hidden flex flex-col md:flex-row selection:bg-neutral-800 selection:text-white">
 
     <!-- SIDEBAR -->
-    <aside class="w-full md:w-64 border-b md:border-b-0 md:border-r border-neutral-900 bg-neutral-950 flex flex-col z-20 flex-shrink-0">
+    <aside class="w-full md:w-64 h-auto md:h-screen border-b md:border-b-0 md:border-r border-neutral-900 bg-neutral-950 flex flex-col z-20 flex-shrink-0">
+
         <!-- Logo -->
         <div class="h-14 flex items-center px-6 border-b border-neutral-900">
             <div class="flex items-center gap-3 w-full">
+
                 <div class="w-5 h-5 rounded-[4px] bg-gradient-to-br from-neutral-600 to-neutral-900 border border-neutral-700 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.05)]">
                     <div class="w-1.5 h-1.5 bg-neutral-200 rounded-sm"></div>
                 </div>
-                <span class="text-sm font-medium tracking-tight text-neutral-100 uppercase">CR OS</span>
+
+                <span class="text-sm font-medium tracking-tight text-neutral-100 uppercase">
+                    CR OS
+                </span>
+
                 <div class="ml-auto flex items-center gap-1.5">
                     <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-20"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500/80"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-20"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500/80"></span>
                     </span>
-                    <span class="text-[0.65rem] font-mono text-neutral-500 uppercase">Sys.Online</span>
+
+                    <span class="text-[0.65rem] font-mono text-neutral-500 uppercase">
+                        Sys.Online
+                    </span>
                 </div>
             </div>
         </div>
 
-        <!-- Nav -->
+        <!-- NAV -->
         <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-0.5 custom-scrollbar" id="main-nav">
-            <button onclick="switchView('dashboard')" data-view="dashboard" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-neutral-900 text-neutral-100 border border-neutral-800/50 transition-all">
-                <iconify-icon icon="solar:widget-5-linear" width="18" stroke-width="1.5"></iconify-icon>
+
+            <button onclick="switchView('dashboard')" data-view="dashboard"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-neutral-900 text-neutral-100 border border-neutral-800/50 transition-all">
+
+                <iconify-icon icon="solar:widget-5-linear" width="18"></iconify-icon>
                 Command Center
             </button>
-            <button onclick="switchView('projects')" data-view="projects" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
-                <iconify-icon icon="solar:folder-with-files-linear" width="18" stroke-width="1.5"></iconify-icon>
+
+            <button onclick="switchView('projects')" data-view="projects"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
+
+                <iconify-icon icon="solar:folder-with-files-linear" width="18"></iconify-icon>
                 Project Portfolio
             </button>
-            <button onclick="switchView('workspace')" data-view="workspace" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
-                <iconify-icon icon="solar:augmented-reality-linear" width="18" stroke-width="1.5"></iconify-icon>
+
+            <button onclick="switchView('workspace')" data-view="workspace"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
+
+                <iconify-icon icon="solar:augmented-reality-linear" width="18"></iconify-icon>
                 Active Workspace
             </button>
+
             <div class="pt-4 pb-2 px-3">
-                <p class="text-[0.65rem] font-mono text-neutral-600 uppercase tracking-widest">Intelligence</p>
+                <p class="text-[0.65rem] font-mono text-neutral-600 uppercase tracking-widest">
+                    Intelligence
+                </p>
             </div>
-            <button onclick="switchView('ai')" data-view="ai" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all group relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-neutral-800/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                <iconify-icon icon="solar:cpu-linear" width="18" stroke-width="1.5" class="text-neutral-500 group-hover:text-neutral-300"></iconify-icon>
+
+            <button onclick="switchView('ai')" data-view="ai"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
+
+                <iconify-icon icon="solar:cpu-linear" width="18"></iconify-icon>
                 ALMA Core
             </button>
-            <button onclick="switchView('analytics')" data-view="analytics" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
-                <iconify-icon icon="solar:chart-square-linear" width="18" stroke-width="1.5"></iconify-icon>
+
+            <button onclick="switchView('analytics')" data-view="analytics"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
+
+                <iconify-icon icon="solar:chart-square-linear" width="18"></iconify-icon>
                 Analytics
             </button>
+
             <div class="pt-4 pb-2 px-3">
-                <p class="text-[0.65rem] font-mono text-neutral-600 uppercase tracking-widest">System</p>
+                <p class="text-[0.65rem] font-mono text-neutral-600 uppercase tracking-widest">
+                    System
+                </p>
             </div>
-            <button onclick="switchView('settings')" data-view="settings" class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
-                <iconify-icon icon="solar:settings-linear" width="18" stroke-width="1.5"></iconify-icon>
+
+            <button onclick="switchView('settings')" data-view="settings"
+                class="nav-btn w-full flex items-center gap-3 px-3 py-2 text-sm font-normal rounded-md text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/50 transition-all">
+
+                <iconify-icon icon="solar:settings-linear" width="18"></iconify-icon>
                 Settings
             </button>
         </nav>
 
-        <!-- User -->
+        <!-- USER -->
         <div class="p-4 border-t border-neutral-900">
-            <div class="flex items-center gap-3 p-2 rounded-md hover:bg-neutral-900/50 cursor-pointer transition-all border border-transparent hover:border-neutral-800/50">
-                <div class="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center text-xs font-medium text-neutral-300 border border-neutral-700">
+
+            <div
+                class="flex items-center gap-3 p-2 rounded-md hover:bg-neutral-900/50 cursor-pointer transition-all border border-transparent hover:border-neutral-800/50">
+
+                <div
+                    class="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center text-xs font-medium text-neutral-300 border border-neutral-700">
+
                     JD
                 </div>
+
                 <div class="flex-1 min-w-0">
-                    <p class="text-xs font-medium text-neutral-200 truncate">J. Doe</p>
-                    <p class="text-[0.65rem] text-neutral-500 truncate">Chief Estimator</p>
+                    <p class="text-xs font-medium text-neutral-200 truncate">
+                        J. Doe
+                    </p>
+
+                    <p class="text-[0.65rem] text-neutral-500 truncate">
+                        Chief Estimator
+                    </p>
                 </div>
-                <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="text-neutral-600"></iconify-icon>
+
+                <iconify-icon icon="solar:alt-arrow-down-linear" width="14"
+                    class="text-neutral-600"></iconify-icon>
             </div>
         </div>
     </aside>
 
-    <!-- MAIN CONTENT AREA -->
-    <main class="flex-1 flex flex-col min-w-0 relative bg-neutral-950">
-        
+    <!-- MAIN -->
+    <main class="flex-1 flex flex-col min-w-0 relative bg-neutral-950 h-screen overflow-hidden">
+
         <!-- TOPBAR -->
-        <header class="h-14 border-b border-neutral-900 bg-neutral-950/80 backdrop-blur-md flex items-center px-6 justify-between z-10 flex-shrink-0 sticky top-0">
-            <!-- Command Bar -->
+        <header
+            class="h-14 border-b border-neutral-900 bg-neutral-950/80 backdrop-blur-md flex items-center px-6 justify-between z-10 flex-shrink-0 sticky top-0">
+
+            <!-- SEARCH -->
             <div class="flex-1 max-w-md relative group">
-                <iconify-icon icon="solar:minimalistic-magnifer-linear" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500 group-focus-within:text-neutral-300 transition-colors"></iconify-icon>
-                <input type="text" placeholder="Search projects, blueprints, estimates (Cmd+K)" class="w-full bg-neutral-900/50 border border-neutral-800 text-neutral-200 text-xs rounded-md pl-9 pr-4 py-1.5 focus:outline-none focus:border-neutral-600 focus:bg-neutral-900 transition-all placeholder:text-neutral-600 font-mono">
-                <div class="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1">
-                    <span class="px-1.5 py-0.5 rounded text-[0.6rem] font-mono bg-neutral-800 text-neutral-400 border border-neutral-700">⌘</span>
-                    <span class="px-1.5 py-0.5 rounded text-[0.6rem] font-mono bg-neutral-800 text-neutral-400 border border-neutral-700">K</span>
-                </div>
+
+                <iconify-icon icon="solar:minimalistic-magnifer-linear"
+                    width="16"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500"></iconify-icon>
+
+                <input
+                    type="text"
+                    placeholder="Search projects, blueprints, estimates (Cmd+K)"
+                    class="w-full bg-neutral-900/50 border border-neutral-800 text-neutral-200 text-xs rounded-md pl-9 pr-4 py-1.5 focus:outline-none focus:border-neutral-600 focus:bg-neutral-900 transition-all placeholder:text-neutral-600 font-mono"
+                />
             </div>
 
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-                <div class="flex items-center gap-1">
-                    <span class="text-xs text-neutral-500">Processing Queue:</span>
-                    <span class="text-xs font-mono text-neutral-300">0</span>
+            <!-- ACTIONS -->
+            <div class="flex items-center gap-4 ml-4">
+
+                <div class="hidden sm:flex items-center gap-1">
+                    <span class="text-xs text-neutral-500">
+                        Queue:
+                    </span>
+
+                    <span class="text-xs font-mono text-neutral-300">
+                        0
+                    </span>
                 </div>
-                <div class="h-4 w-px bg-neutral-800"></div>
+
                 <button class="relative text-neutral-400 hover:text-neutral-200 transition-colors">
-                    <iconify-icon icon="solar:bell-linear" width="20" stroke-width="1.5"></iconify-icon>
-                    <span class="absolute top-0 right-0 w-2 h-2 bg-neutral-300 rounded-full border-2 border-neutral-950"></span>
+
+                    <iconify-icon icon="solar:bell-linear" width="20"></iconify-icon>
+
+                    <span
+                        class="absolute top-0 right-0 w-2 h-2 bg-neutral-300 rounded-full border-2 border-neutral-950"></span>
                 </button>
             </div>
         </header>
 
-        <!-- VIEW CONTAINER -->
+        <!-- CONTENT -->
         <div class="flex-1 overflow-hidden relative">
 
-            <!-- 1. DASHBOARD VIEW -->
-            <div id="view-dashboard" class="absolute inset-0 overflow-y-auto p-6 space-y-6 custom-scrollbar opacity-100 transition-opacity duration-300">
-                <div class="flex justify-between items-end">
-                    <div>
-                        <h1 class="text-2xl font-medium tracking-tight text-neutral-50">Command Center</h1>
-                        <p class="text-sm text-neutral-500 mt-1">Autonomous intelligence overview for Q3 2024.</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button class="px-3 py-1.5 text-xs font-medium rounded-md bg-neutral-900 border border-neutral-800 text-neutral-300 hover:bg-neutral-800 transition-all flex items-center gap-2">
-                            <iconify-icon icon="solar:calendar-linear"></iconify-icon>
-                            Last 30 Days
-                        </button>
-                    </div>
-                </div>
+            <!-- WORKSPACE -->
+            <div id="view-workspace"
+                class="absolute inset-0 opacity-100 transition-opacity duration-300 flex flex-col h-full bg-neutral-950">
 
-                <!-- KPI Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Metric Card 1 -->
-                    <div class="p-4 rounded-xl bg-neutral-900/40 border border-neutral-800/60 backdrop-blur-sm relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <iconify-icon icon="solar:wallet-money-linear" width="48"></iconify-icon>
-                        </div>
-                        <p class="text-xs text-neutral-500 font-medium uppercase tracking-wider mb-1">Active Pipeline</p>
-                        <div class="flex items-baseline gap-2">
-                            <h2 class="text-2xl font-medium tracking-tight text-neutral-100 font-mono">$142.8M</h2>
-                        </div>
-                        <div class="mt-3 flex items-center gap-1.5 text-xs">
-                            <span class="text-neutral-400 bg-neutral-800/50 px-1.5 py-0.5 rounded flex items-center gap-1">
-                                <iconify-icon icon="solar:arrow-right-up-linear" width="12"></iconify-icon>
-                                12.4%
-                            </span>
-                            <span class="text-neutral-600">vs last month</span>
-                        </div>
-                    </div>
-                    <!-- Metric Card 2 -->
-                    <div class="p-4 rounded-xl bg-neutral-900/40 border border-neutral-800/60 backdrop-blur-sm relative overflow-hidden group">
-                        <p class="text-xs text-neutral-500 font-medium uppercase tracking-wider mb-1">YTD Awarded</p>
-                        <div class="flex items-baseline gap-2">
-                            <h2 class="text-2xl font-medium tracking-tight text-neutral-100 font-mono">$48.2M</h2>
-                        </div>
-                        <div class="mt-3 flex items-center gap-1.5 text-xs">
-                            <div class="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
-                                <div class="bg-neutral-400 h-full w-[65%]"></div>
-                            </div>
-                            <span class="text-neutral-500 font-mono ml-1">65%</span>
-                        </div>
-                    </div>
-                    <!-- Metric Card 3 -->
-                    <div class="p-4 rounded-xl bg-neutral-900/40 border border-neutral-800/60 backdrop-blur-sm relative overflow-hidden group">
-                        <p class="text-xs text-neutral-500 font-medium uppercase tracking-wider mb-1">AI Takeoff Accuracy</p>
-                        <div class="flex items-baseline gap-2">
-                            <h2 class="text-2xl font-medium tracking-tight text-neutral-100 font-mono">98.4%</h2>
-                        </div>
-                        <div class="mt-3 flex items-center gap-1.5 text-xs text-neutral-500">
-                            Based on 1,420 automated measurements
-                        </div>
-                    </div>
-                    <!-- Metric Card 4 -->
-                    <div class="p-4 rounded-xl bg-neutral-900/40 border border-neutral-800/60 backdrop-blur-sm relative overflow-hidden group">
-                        <div class="flex justify-between items-start">
-                            <p class="text-xs text-neutral-500 font-medium uppercase tracking-wider mb-1">ALMA Ops Status</p>
-                            <span class="relative flex h-2 w-2 mt-1">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neutral-400 opacity-20"></span>
-                              <span class="relative inline-flex rounded-full h-2 w-2 bg-neutral-300"></span>
-                            </span>
-                        </div>
-                        <div class="flex items-baseline gap-2">
-                            <h2 class="text-lg font-medium tracking-tight text-neutral-100 mt-1">Nominal</h2>
-                        </div>
-                        <div class="mt-3 flex items-center gap-1.5 text-xs">
-                            <span class="text-neutral-400 bg-neutral-800/50 px-1.5 py-0.5 rounded font-mono">3</span>
-                            <span class="text-neutral-600">Active autonomous agents</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- WORKSPACE HEADER -->
+                <div
+                    class="h-12 border-b border-neutral-900 flex items-center justify-between px-4 bg-neutral-950 flex-shrink-0">
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Chart Area -->
-                    <div class="lg:col-span-2 rounded-xl border border-neutral-800/60 bg-neutral-900/20 flex flex-col p-5 h-80 relative overflow-hidden">
-                        <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <h3 class="text-sm font-medium text-neutral-200">Revenue Projection vs Pipeline</h3>
-                            <div class="flex gap-2">
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-neutral-300"></div>
-                                    <span class="text-xs text-neutral-500">Awarded</span>
-                                </div>
-                                <div class="flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-neutral-700"></div>
-                                    <span class="text-xs text-neutral-500">Pipeline</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Simulated Chart -->
-                        <div class="flex-1 relative z-10 flex items-end gap-2 pb-6 px-2">
-                            <!-- Bars -->
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800 rounded-t-sm h-[40%] group-hover:bg-neutral-700 transition-colors relative"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">Jan</div></div>
-                                <div class="w-full bg-neutral-300 rounded-t-sm h-[20%] mt-1 group-hover:bg-neutral-200 transition-colors relative"></div>
-                            </div>
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800 rounded-t-sm h-[55%] group-hover:bg-neutral-700 transition-colors relative"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">Feb</div></div>
-                                <div class="w-full bg-neutral-300 rounded-t-sm h-[30%] mt-1 group-hover:bg-neutral-200 transition-colors"></div>
-                            </div>
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800 rounded-t-sm h-[45%] group-hover:bg-neutral-700 transition-colors relative"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">Mar</div></div>
-                                <div class="w-full bg-neutral-300 rounded-t-sm h-[40%] mt-1 group-hover:bg-neutral-200 transition-colors"></div>
-                            </div>
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800 rounded-t-sm h-[70%] group-hover:bg-neutral-700 transition-colors relative"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">Apr</div></div>
-                                <div class="w-full bg-neutral-300 rounded-t-sm h-[25%] mt-1 group-hover:bg-neutral-200 transition-colors"></div>
-                            </div>
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800 rounded-t-sm h-[85%] relative overflow-hidden group-hover:bg-neutral-700 transition-colors">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/5"></div>
-                                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">May</div>
-                                </div>
-                                <div class="w-full bg-neutral-300 rounded-t-sm h-[35%] mt-1 shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:bg-neutral-200 transition-colors"></div>
-                            </div>
-                            <div class="flex-1 flex flex-col justify-end group">
-                                <div class="w-full bg-neutral-800/50 rounded-t-sm h-[60%] border border-dashed border-neutral-700 relative"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[0.65rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity">Jun</div></div>
-                                <div class="w-full bg-neutral-500 rounded-t-sm h-[10%] mt-1"></div>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-2 left-6 right-6 border-t border-neutral-800/50 flex justify-between pt-2">
-                            <span class="text-[0.65rem] font-mono text-neutral-600">Q1</span>
-                            <span class="text-[0.65rem] font-mono text-neutral-600">Q2 (Projected)</span>
-                        </div>
-                    </div>
+                    <div class="flex items-center gap-3 min-w-0">
 
-                    <!-- AI Activity Feed -->
-                    <div class="rounded-xl border border-neutral-800/60 bg-neutral-900/20 p-5 h-80 flex flex-col">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-sm font-medium text-neutral-200 flex items-center gap-2">
-                                <iconify-icon icon="solar:magic-stick-3-linear" class="text-neutral-400"></iconify-icon>
-                                Autonomous Logs
-                            </h3>
-                            <button class="text-[0.65rem] font-mono text-neutral-500 hover:text-neutral-300">View All</button>
-                        </div>
-                        <div class="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
-                            <!-- Log Item -->
-                            <div class="flex gap-3 relative before:absolute before:left-1.5 before:top-5 before:bottom-[-1rem] before:w-px before:bg-neutral-800 last:before:hidden">
-                                <div class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-600 flex-shrink-0 mt-1 relative z-10"></div>
-                                <div>
-                                    <p class="text-xs text-neutral-300">Completed takeoff for <span class="font-medium text-neutral-100">Project Titan - Div 3</span></p>
-                                    <p class="text-[0.65rem] font-mono text-neutral-500 mt-0.5">2 mins ago • Extracted 342 entities</p>
-                                </div>
-                            </div>
-                             <!-- Log Item -->
-                             <div class="flex gap-3 relative before:absolute before:left-1.5 before:top-5 before:bottom-[-1rem] before:w-px before:bg-neutral-800 last:before:hidden">
-                                <div class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-600 flex-shrink-0 mt-1 relative z-10"></div>
-                                <div>
-                                    <p class="text-xs text-neutral-300">Flagged discrepancy in <span class="font-medium text-neutral-100">Apex Towers Specs</span></p>
-                                    <p class="text-[0.65rem] font-mono text-neutral-500 mt-0.5">14 mins ago • RFI Draft generated</p>
-                                </div>
-                            </div>
-                            <!-- Log Item -->
-                            <div class="flex gap-3 relative before:absolute before:left-1.5 before:top-5 before:bottom-[-1rem] before:w-px before:bg-neutral-800 last:before:hidden">
-                                <div class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-600 flex-shrink-0 mt-1 relative z-10"></div>
-                                <div>
-                                    <p class="text-xs text-neutral-300">Updated material pricing from <span class="font-medium text-neutral-100">Index DB</span></p>
-                                    <p class="text-[0.65rem] font-mono text-neutral-500 mt-0.5">1 hr ago • 12,045 SKUs refreshed</p>
-                                </div>
-                            </div>
-                            <!-- Log Item -->
-                            <div class="flex gap-3 relative before:absolute before:left-1.5 before:top-5 before:bottom-[-1rem] before:w-px before:bg-neutral-800 last:before:hidden">
-                                <div class="w-3 h-3 rounded-full bg-neutral-800 border border-neutral-600 flex-shrink-0 mt-1 relative z-10 flex items-center justify-center">
-                                    <div class="w-1 h-1 bg-neutral-400 rounded-full animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-neutral-300 animate-pulse">Analyzing blueprints for <span class="font-medium text-neutral-100">Nexus Hub</span>...</p>
-                                    <p class="text-[0.65rem] font-mono text-neutral-500 mt-0.5">Processing sheet A1.04</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Active Projects Table -->
-                <div class="rounded-xl border border-neutral-800/60 bg-neutral-900/20 overflow-hidden">
-                    <div class="px-5 py-4 border-b border-neutral-800/60 flex justify-between items-center">
-                        <h3 class="text-sm font-medium text-neutral-200">Active Bids &amp; Proposals</h3>
-                        <button class="text-xs bg-white/5 hover:bg-white/10 px-2 py-1 rounded text-neutral-300 transition-colors">Export CSV</button>
-                    </div>
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="text-[0.65rem] font-mono text-neutral-500 uppercase tracking-wider border-b border-neutral-800/50 bg-neutral-900/30">
-                                <th class="px-5 py-3 font-normal">Project ID</th>
-                                <th class="px-5 py-3 font-normal">Name</th>
-                                <th class="px-5 py-3 font-normal">Client</th>
-                                <th class="px-5 py-3 font-normal">Value Estimate</th>
-                                <th class="px-5 py-3 font-normal">Status</th>
-                                <th class="px-5 py-3 font-normal text-right">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm divide-y divide-neutral-800/50">
-                            <tr class="hover:bg-neutral-900/40 transition-colors group">
-                                <td class="px-5 py-3 font-mono text-neutral-400 text-xs">PRJ-9042</td>
-                                <td class="px-5 py-3 font-medium text-neutral-200">Project Titan - Giga Factory</td>
-                                <td class="px-5 py-3 text-neutral-400">Atlas Corp</td>
-                                <td class="px-5 py-3 font-mono text-neutral-300">$42,500,000</td>
-                                <td class="px-5 py-3">
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[0.65rem] font-medium bg-neutral-800 text-neutral-300 border border-neutral-700">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-pulse"></div>
-                                        Estimating
-                                    </span>
-                                </td>
-                                <td class="px-5 py-3 text-right">
-                                    <button onclick="switchView('workspace')" class="text-xs text-neutral-500 hover:text-neutral-200 transition-colors opacity-0 group-hover:opacity-100">Open Workspace →</button>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-neutral-900/40 transition-colors group">
-                                <td class="px-5 py-3 font-mono text-neutral-400 text-xs">PRJ-9038</td>
-                                <td class="px-5 py-3 font-medium text-neutral-200">Nexus Data Center Hub</td>
-                                <td class="px-5 py-3 text-neutral-400">CyberDyne Systems</td>
-                                <td class="px-5 py-3 font-mono text-neutral-300">$18,250,000</td>
-                                <td class="px-5 py-3">
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[0.65rem] font-medium bg-neutral-900 text-neutral-400 border border-neutral-800">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-neutral-600"></div>
-                                        Review
-                                    </span>
-                                </td>
-                                <td class="px-5 py-3 text-right">
-                                    <button onclick="switchView('workspace')" class="text-xs text-neutral-500 hover:text-neutral-200 transition-colors opacity-0 group-hover:opacity-100">Open Workspace →</button>
-                                </td>
-                            </tr>
-                            <tr class="hover:bg-neutral-900/40 transition-colors group">
-                                <td class="px-5 py-3 font-mono text-neutral-400 text-xs">PRJ-9031</td>
-                                <td class="px-5 py-3 font-medium text-neutral-200">Apex Towers - Phase 1</td>
-                                <td class="px-5 py-3 text-neutral-400">Horizon Dev</td>
-                                <td class="px-5 py-3 font-mono text-neutral-500 italic">Calculating...</td>
-                                <td class="px-5 py-3">
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[0.65rem] font-medium bg-neutral-800 text-neutral-300 border border-neutral-700">
-                                        <iconify-icon icon="solar:cpu-linear" class="text-neutral-400"></iconify-icon>
-                                        AI Takeoff
-                                    </span>
-                                </td>
-                                <td class="px-5 py-3 text-right">
-                                    <button class="text-xs text-neutral-500 hover:text-neutral-200 transition-colors opacity-0 group-hover:opacity-100">Details →</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 2. PROJECTS VIEW (Simplified placeholder) -->
-            <div id="view-projects" class="absolute inset-0 overflow-y-auto p-6 hidden opacity-0 transition-opacity duration-300">
-                <div class="flex justify-between items-end mb-6">
-                    <div>
-                        <h1 class="text-2xl font-medium tracking-tight text-neutral-50">Project Portfolio</h1>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button class="px-3 py-1.5 text-xs font-medium rounded-md bg-neutral-100 text-neutral-950 hover:bg-white transition-all flex items-center gap-2">
-                            <iconify-icon icon="solar:add-circle-linear" width="16"></iconify-icon>
-                            New Project
-                        </button>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Project Card -->
-                    <div class="border border-neutral-800 rounded-xl p-5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors cursor-pointer group" onclick="switchView('workspace')">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-2 py-0.5 rounded text-[0.6rem] font-mono bg-neutral-800 text-neutral-300 border border-neutral-700">Bidding</span>
-                            <span class="text-[0.65rem] font-mono text-neutral-500">PRJ-9042</span>
-                        </div>
-                        <h3 class="text-base font-medium text-neutral-200 mb-1 group-hover:text-white transition-colors">Project Titan - Giga Factory</h3>
-                        <p class="text-xs text-neutral-500 mb-4">Atlas Corp • Austin, TX</p>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
-                                <span class="text-neutral-400">Estimate Progress</span>
-                                <span class="font-mono text-neutral-300">85%</span>
-                            </div>
-                            <div class="w-full bg-neutral-800 h-1 rounded-full overflow-hidden">
-                                <div class="bg-neutral-400 h-full w-[85%]"></div>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-neutral-800/50 flex justify-between items-end">
-                            <div>
-                                <p class="text-[0.65rem] font-mono text-neutral-500 uppercase">Current Value</p>
-                                <p class="text-sm font-mono text-neutral-200 mt-0.5">$42,500,000</p>
-                            </div>
-                            <div class="flex -space-x-2">
-                                <div class="w-6 h-6 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-[0.6rem] text-neutral-400 z-20">AI</div>
-                                <div class="w-6 h-6 rounded-full bg-neutral-700 border border-neutral-600 flex items-center justify-center text-[0.6rem] text-neutral-300 z-10">JD</div>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Project Card -->
-                     <div class="border border-neutral-800 rounded-xl p-5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors cursor-pointer group">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-2 py-0.5 rounded text-[0.6rem] font-mono bg-neutral-900 text-neutral-400 border border-neutral-800">Precon</span>
-                            <span class="text-[0.65rem] font-mono text-neutral-500">PRJ-9038</span>
-                        </div>
-                        <h3 class="text-base font-medium text-neutral-200 mb-1 group-hover:text-white transition-colors">Nexus Data Center Hub</h3>
-                        <p class="text-xs text-neutral-500 mb-4">CyberDyne Sys • Ashburn, VA</p>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
-                                <span class="text-neutral-400">Value Engineering</span>
-                                <span class="font-mono text-neutral-300">100%</span>
-                            </div>
-                            <div class="w-full bg-neutral-800 h-1 rounded-full overflow-hidden">
-                                <div class="bg-neutral-600 h-full w-full"></div>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-neutral-800/50 flex justify-between items-end">
-                            <div>
-                                <p class="text-[0.65rem] font-mono text-neutral-500 uppercase">Final Bid</p>
-                                <p class="text-sm font-mono text-neutral-200 mt-0.5">$18,250,000</p>
-                            </div>
-                             <div class="flex -space-x-2">
-                                <div class="w-6 h-6 rounded-full bg-neutral-700 border border-neutral-600 flex items-center justify-center text-[0.6rem] text-neutral-300 z-10">MK</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. WORKSPACE VIEW (MOST IMPORTANT - Futuristic Command Center) -->
-            <div id="view-workspace" class="absolute inset-0 hidden opacity-0 transition-opacity duration-300 flex flex-col h-full bg-neutral-950">
-                <!-- Workspace Header -->
-                <div class="h-12 border-b border-neutral-900 flex items-center justify-between px-4 bg-neutral-950 flex-shrink-0">
-                    <div class="flex items-center gap-3">
-                        <button onclick="switchView('dashboard')" class="text-neutral-500 hover:text-neutral-300 transition-colors">
+                        <button class="text-neutral-500 hover:text-neutral-300 transition-colors">
                             <iconify-icon icon="solar:alt-arrow-left-linear" width="18"></iconify-icon>
                         </button>
+
                         <div class="h-4 w-px bg-neutral-800"></div>
-                        <span class="text-xs font-mono text-neutral-500">PRJ-9042</span>
-                        <h2 class="text-sm font-medium text-neutral-200">Project Titan - Giga Factory</h2>
-                        <span class="px-1.5 py-0.5 rounded text-[0.6rem] font-mono bg-neutral-900 text-neutral-400 border border-neutral-800 ml-2">Div 3: Concrete</span>
+
+                        <span class="text-xs font-mono text-neutral-500 whitespace-nowrap">
+                            PRJ-9042
+                        </span>
+
+                        <h2 class="text-sm font-medium text-neutral-200 truncate">
+                            Project Titan - Giga Factory
+                        </h2>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <button class="px-3 py-1 text-xs font-medium rounded text-neutral-400 border border-neutral-800 hover:bg-neutral-900 transition-all flex items-center gap-1.5">
-                            <iconify-icon icon="solar:document-text-linear"></iconify-icon>
-                            Scope Sheets
-                        </button>
-                        <button class="px-3 py-1 text-xs font-medium rounded bg-neutral-100 text-neutral-950 hover:bg-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] flex items-center gap-1.5">
-                            <iconify-icon icon="solar:printer-linear"></iconify-icon>
-                            Generate Proposal
-                        </button>
-                    </div>
+
+                    <button
+                        class="hidden sm:flex px-3 py-1 text-xs font-medium rounded bg-neutral-100 text-neutral-950 hover:bg-white transition-all">
+
+                        Generate Proposal
+                    </button>
                 </div>
 
-                <!-- 3-Column Layout -->
-                <div class="flex-1 flex overflow-hidden">
-                    
-                    <!-- LEFT PANEL: Blueprint Viewer (25%) -->
-                    <div class="w-[25%] border-r border-neutral-900 flex flex-col bg-neutral-950 relative">
-                        <div class="h-10 border-b border-neutral-900 flex items-center px-3 justify-between bg-neutral-900/20">
-                            <span class="text-xs font-medium text-neutral-400">Sheet S-101.pdf</span>
+                <!-- MOBILE RESPONSIVE LAYOUT -->
+                <div class="flex-1 flex flex-col lg:flex-row overflow-hidden">
+
+                    <!-- LEFT PANEL -->
+                    <div
+                        class="w-full lg:w-[25%] h-[40vh] lg:h-auto border-b lg:border-b-0 lg:border-r border-neutral-900 flex flex-col bg-neutral-950 relative">
+
+                        <div
+                            class="h-10 border-b border-neutral-900 flex items-center px-3 justify-between bg-neutral-900/20">
+
+                            <span class="text-xs font-medium text-neutral-400">
+                                Sheet S-101.pdf
+                            </span>
+
                             <div class="flex gap-1">
-                                <button class="p-1 text-neutral-500 hover:text-neutral-300 rounded hover:bg-neutral-800"><iconify-icon icon="solar:minus-circle-linear" width="14"></iconify-icon></button>
-                                <span class="text-[0.65rem] font-mono text-neutral-500 px-1 py-1">125%</span>
-                                <button class="p-1 text-neutral-500 hover:text-neutral-300 rounded hover:bg-neutral-800"><iconify-icon icon="solar:add-circle-linear" width="14"></iconify-icon></button>
+                                <button class="p-1 text-neutral-500 hover:text-neutral-300 rounded hover:bg-neutral-800">
+                                    <iconify-icon icon="solar:minus-circle-linear" width="14"></iconify-icon>
+                                </button>
+
+                                <span class="text-[0.65rem] font-mono text-neutral-500 px-1 py-1">
+                                    125%
+                                </span>
+
+                                <button class="p-1 text-neutral-500 hover:text-neutral-300 rounded hover:bg-neutral-800">
+                                    <iconify-icon icon="solar:add-circle-linear" width="14"></iconify-icon>
+                                </button>
                             </div>
                         </div>
-                        <!-- Drawing Area -->
-                        <div class="flex-1 overflow-hidden relative bg-[#121212] flex items-center justify-center p-4">
-                            <!-- Simulated Blueprint Background -->
-                            <div class="absolute inset-0 bg-grid-pattern opacity-20" style="background-size: 20px 20px;"></div>
-                            
-                            <!-- Dummy Blueprint Graphic -->
-                            <div class="relative w-full h-[80%] border-2 border-neutral-800/50 bg-[#1a1a1a] shadow-2xl flex items-center justify-center overflow-hidden">
-                                <div class="absolute inset-0 bg-grid-pattern opacity-10" style="background-size: 10px 10px;"></div>
-                                <!-- Some geometric shapes to look like a foundation plan -->
-                                <div class="w-[80%] h-[60%] border border-cyan-900/50 relative">
-                                    <div class="absolute top-4 left-4 w-12 h-12 border border-cyan-800/50 flex items-center justify-center"><span class="text-[0.5rem] font-mono text-cyan-700">F1</span></div>
-                                    <div class="absolute top-4 right-4 w-12 h-12 border border-cyan-800/50 flex items-center justify-center"><span class="text-[0.5rem] font-mono text-cyan-700">F1</span></div>
-                                    <div class="absolute bottom-4 left-4 w-12 h-12 border border-cyan-800/50 flex items-center justify-center"><span class="text-[0.5rem] font-mono text-cyan-700">F1</span></div>
-                                    <div class="absolute bottom-4 right-4 w-12 h-12 border border-cyan-800/50 flex items-center justify-center"><span class="text-[0.5rem] font-mono text-cyan-700">F1</span></div>
-                                    <!-- AI Detection Highlight -->
-                                    <div class="absolute inset-x-8 top-1/2 -translate-y-1/2 h-8 bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center group cursor-crosshair">
-                                        <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_5px_#22d3ee]"></div>
-                                        <span class="text-[0.6rem] font-mono text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-4">Grade Beam 4</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Tools Sidebar -->
-                            <div class="absolute left-2 top-2 bottom-2 w-8 bg-neutral-900/80 backdrop-blur border border-neutral-800 rounded flex flex-col items-center py-2 gap-2 shadow-lg">
-                                <button class="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-neutral-800"><iconify-icon icon="solar:cursor-linear" width="16"></iconify-icon></button>
-                                <button class="p-1.5 text-cyan-400 bg-cyan-900/20 rounded border border-cyan-800/50"><iconify-icon icon="solar:ruler-linear" width="16"></iconify-icon></button>
-                                <button class="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-neutral-800"><iconify-icon icon="solar:pen-linear" width="16"></iconify-icon></button>
-                                <div class="w-4 h-px bg-neutral-800 my-1"></div>
-                                <button class="p-1.5 text-neutral-400 hover:text-white rounded hover:bg-neutral-800"><iconify-icon icon="solar:layers-linear" width="16"></iconify-icon></button>
+                        <!-- BLUEPRINT -->
+                        <div class="flex-1 overflow-hidden relative bg-[#121212] flex items-center justify-center p-4">
+
+                            <div class="absolute inset-0 bg-grid-pattern opacity-20"
+                                style="background-size:20px 20px;"></div>
+
+                            <div
+                                class="relative w-full h-[80%] border-2 border-neutral-800/50 bg-[#1a1a1a] shadow-2xl">
+
+                                <div class="absolute inset-0 bg-grid-pattern opacity-10"
+                                    style="background-size:10px 10px;"></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CENTER PANEL: Estimating Table (50%) -->
-                    <div class="w-[50%] flex flex-col bg-neutral-950 relative shadow-[-10px_0_20px_rgba(0,0,0,0.5)] z-10">
-                        <!-- Table Header Tools -->
-                        <div class="h-10 border-b border-neutral-900 flex items-center px-4 justify-between bg-neutral-900/40">
-                            <div class="flex gap-4 text-xs font-medium">
-                                <button class="text-neutral-200 border-b-2 border-neutral-400 pb-[11px] pt-[13px]">Line Items</button>
-                                <button class="text-neutral-500 hover:text-neutral-300 pb-[11px] pt-[13px]">Markups</button>
-                                <button class="text-neutral-500 hover:text-neutral-300 pb-[11px] pt-[13px]">Labor Rates</button>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="flex items-center gap-1.5 text-[0.65rem] text-neutral-500 font-mono">
-                                    <iconify-icon icon="solar:refresh-circle-linear"></iconify-icon>
-                                    Synced with Pricing DB
-                                </div>
+                    <!-- CENTER PANEL -->
+                    <div
+                        class="w-full lg:w-[50%] flex-1 flex flex-col bg-neutral-950 relative shadow-[-10px_0_20px_rgba(0,0,0,0.5)] z-10 min-h-[45vh]">
+
+                        <div
+                            class="h-10 border-b border-neutral-900 flex items-center px-4 justify-between bg-neutral-900/40">
+
+                            <div class="flex gap-4 text-xs font-medium overflow-x-auto custom-scrollbar">
+                                <button class="text-neutral-200 border-b-2 border-neutral-400 pb-[11px] pt-[13px] whitespace-nowrap">
+                                    Line Items
+                                </button>
+
+                                <button class="text-neutral-500 hover:text-neutral-300 whitespace-nowrap">
+                                    Markups
+                                </button>
+
+                                <button class="text-neutral-500 hover:text-neutral-300 whitespace-nowrap">
+                                    Labor Rates
+                                </button>
                             </div>
                         </div>
 
-                        <!-- Data Table -->
+                        <!-- TABLE -->
                         <div class="flex-1 overflow-auto custom-scrollbar bg-neutral-950">
-                            <table class="w-full text-left border-collapse whitespace-nowrap">
+
+                            <table class="w-full min-w-[700px] text-left border-collapse whitespace-nowrap">
+
                                 <thead>
-                                    <tr class="text-[0.65rem] font-mono text-neutral-500 uppercase tracking-wider border-b border-neutral-900 bg-neutral-950 sticky top-0 z-10">
+                                    <tr
+                                        class="text-[0.65rem] font-mono text-neutral-500 uppercase tracking-wider border-b border-neutral-900 bg-neutral-950 sticky top-0 z-10">
+
                                         <th class="px-4 py-2 font-normal w-12 text-center">#</th>
                                         <th class="px-4 py-2 font-normal">Description</th>
                                         <th class="px-4 py-2 font-normal text-right">Qty</th>
@@ -553,372 +320,227 @@
                                         <th class="px-4 py-2 font-normal text-right">Total</th>
                                     </tr>
                                 </thead>
+
                                 <tbody class="text-xs font-mono text-neutral-300">
-                                    <!-- Header Row -->
-                                    <tr class="bg-neutral-900/20 border-b border-neutral-900">
-                                        <td colspan="6" class="px-4 py-2 font-sans font-medium text-neutral-400 text-xs">03 30 00 - Cast-in-Place Concrete</td>
-                                    </tr>
-                                    <!-- Data Rows -->
-                                    <tr class="border-b border-neutral-900 hover:bg-neutral-900/40 group">
-                                        <td class="px-4 py-2 text-neutral-600 text-center text-[0.65rem]">1.1</td>
-                                        <td class="px-4 py-2 flex items-center gap-2 font-sans text-neutral-200">
-                                            Continuous Footings (F1)
-                                            <iconify-icon icon="solar:verified-check-linear" class="text-cyan-600/50" title="AI Verified"></iconify-icon>
+
+                                    <tr class="border-b border-neutral-900 hover:bg-neutral-900/40">
+
+                                        <td class="px-4 py-2 text-neutral-600 text-center text-[0.65rem]">
+                                            1.1
                                         </td>
-                                        <td class="px-4 py-2 text-right relative group-hover:bg-neutral-900/60 cursor-text">
+
+                                        <td class="px-4 py-2 font-sans text-neutral-200">
+                                            Continuous Footings (F1)
+                                        </td>
+
+                                        <td class="px-4 py-2 text-right">
                                             342.5
                                         </td>
-                                        <td class="px-4 py-2 text-neutral-500">CY</td>
-                                        <td class="px-4 py-2 text-right text-neutral-400">$185.00</td>
-                                        <td class="px-4 py-2 text-right text-neutral-200">$63,362.50</td>
+
+                                        <td class="px-4 py-2 text-neutral-500">
+                                            CY
+                                        </td>
+
+                                        <td class="px-4 py-2 text-right text-neutral-400">
+                                            $185.00
+                                        </td>
+
+                                        <td class="px-4 py-2 text-right text-neutral-200">
+                                            $63,362.50
+                                        </td>
                                     </tr>
-                                    <tr class="border-b border-neutral-900 hover:bg-neutral-900/40 group">
-                                        <td class="px-4 py-2 text-neutral-600 text-center text-[0.65rem]">1.2</td>
-                                        <td class="px-4 py-2 flex items-center gap-2 font-sans text-neutral-200">
-                                            Grade Beams
-                                            <iconify-icon icon="solar:verified-check-linear" class="text-cyan-600/50"></iconify-icon>
-                                        </td>
-                                        <td class="px-4 py-2 text-right relative group-hover:bg-neutral-900/60 cursor-text text-cyan-400 border border-transparent group-hover:border-cyan-900/50" title="Updated by AI">
-                                            128.0
-                                        </td>
-                                        <td class="px-4 py-2 text-neutral-500">CY</td>
-                                        <td class="px-4 py-2 text-right text-neutral-400">$195.00</td>
-                                        <td class="px-4 py-2 text-right text-neutral-200">$24,960.00</td>
-                                    </tr>
-                                    <tr class="border-b border-neutral-900 hover:bg-neutral-900/40 group">
-                                        <td class="px-4 py-2 text-neutral-600 text-center text-[0.65rem]">1.3</td>
-                                        <td class="px-4 py-2 flex items-center gap-2 font-sans text-neutral-200">
-                                            Slab on Grade (6")
-                                        </td>
-                                        <td class="px-4 py-2 text-right relative group-hover:bg-neutral-900/60 cursor-text">
-                                            45,000
-                                        </td>
-                                        <td class="px-4 py-2 text-neutral-500">SF</td>
-                                        <td class="px-4 py-2 text-right text-neutral-400">$8.50</td>
-                                        <td class="px-4 py-2 text-right text-neutral-200">$382,500.00</td>
-                                    </tr>
-                                    <tr class="border-b border-neutral-900 hover:bg-neutral-900/40 group">
-                                        <td class="px-4 py-2 text-neutral-600 text-center text-[0.65rem]">1.4</td>
-                                        <td class="px-4 py-2 flex items-center gap-2 font-sans text-neutral-200">
-                                            Rebar (Footings &amp; Grade Beams)
-                                        </td>
-                                        <td class="px-4 py-2 text-right relative group-hover:bg-neutral-900/60 cursor-text text-amber-500/80" title="Manual Override">
-                                            18.5
-                                        </td>
-                                        <td class="px-4 py-2 text-neutral-500">TON</td>
-                                        <td class="px-4 py-2 text-right text-neutral-400">$1,450.00</td>
-                                        <td class="px-4 py-2 text-right text-neutral-200">$26,825.00</td>
-                                    </tr>
-                                    <!-- Empty space filler -->
-                                    <tr><td colspan="6" class="h-40"></td></tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <!-- Summary Footer -->
-                        <div class="h-28 border-t border-neutral-800 bg-neutral-900/80 flex flex-col justify-center px-6 gap-2 flex-shrink-0 relative overflow-hidden backdrop-blur-md">
-                            <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-neutral-900 to-transparent pointer-events-none"></div>
-                            
+                        <!-- FOOTER -->
+                        <div
+                            class="h-28 border-t border-neutral-800 bg-neutral-900/80 flex flex-col justify-center px-6 gap-2 flex-shrink-0 relative overflow-hidden backdrop-blur-md">
+
                             <div class="flex justify-between items-center text-xs font-mono text-neutral-400">
-                                <span>Subtotal (Direct Costs)</span>
+
+                                <span>Subtotal</span>
+
                                 <span>$497,647.50</span>
                             </div>
-                            <div class="flex justify-between items-center text-xs font-mono text-neutral-400">
-                                <span>Overhead &amp; Profit (15%)</span>
-                                <span>$74,647.12</span>
-                            </div>
+
                             <div class="flex justify-between items-end border-t border-neutral-800 pt-2 mt-1">
-                                <span class="text-xs font-sans text-neutral-500 uppercase tracking-widest">Total Estimated Value</span>
-                                <span class="text-xl font-mono text-neutral-100 tracking-tight shadow-[0_0_15px_rgba(255,255,255,0.05)]">$572,294.62</span>
+
+                                <span
+                                    class="text-xs font-sans text-neutral-500 uppercase tracking-widest">
+                                    Total Estimated Value
+                                </span>
+
+                                <span class="text-xl font-mono text-neutral-100 tracking-tight">
+                                    $572,294.62
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- RIGHT PANEL: ALMA AI Assistant (25%) -->
-                    <div class="w-[25%] border-l border-neutral-900 bg-neutral-950 flex flex-col relative z-20">
-                        <div class="h-10 border-b border-neutral-900 flex items-center px-4 justify-between bg-neutral-900/20">
+                    <!-- RIGHT PANEL -->
+                    <div
+                        class="w-full lg:w-[25%] h-[35vh] lg:h-auto border-t lg:border-t-0 lg:border-l border-neutral-900 bg-neutral-950 flex flex-col relative z-20">
+
+                        <div
+                            class="h-10 border-b border-neutral-900 flex items-center px-4 justify-between bg-neutral-900/20">
+
                             <div class="flex items-center gap-2">
-                                <iconify-icon icon="solar:cpu-linear" class="text-cyan-500/80"></iconify-icon>
-                                <span class="text-xs font-medium text-neutral-200 tracking-wide">ALMA Assistant</span>
+
+                                <iconify-icon icon="solar:cpu-linear"
+                                    class="text-cyan-500/80"></iconify-icon>
+
+                                <span class="text-xs font-medium text-neutral-200 tracking-wide">
+                                    ALMA Assistant
+                                </span>
                             </div>
-                            <span class="relative flex h-2 w-2">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-20"></span>
-                              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500/80"></span>
-                            </span>
                         </div>
 
-                        <!-- Chat / Feed -->
+                        <!-- CHAT -->
                         <div class="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar text-sm">
-                            
-                            <!-- AI Message -->
+
                             <div class="flex gap-3">
-                                <div class="w-6 h-6 rounded border border-cyan-900/50 bg-cyan-950/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <iconify-icon icon="solar:magic-stick-3-linear" class="text-cyan-500 text-[10px]"></iconify-icon>
+
+                                <div
+                                    class="w-6 h-6 rounded border border-cyan-900/50 bg-cyan-950/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+
+                                    <iconify-icon icon="solar:magic-stick-3-linear"
+                                        class="text-cyan-500 text-[10px]"></iconify-icon>
                                 </div>
+
                                 <div class="flex-1">
-                                    <p class="text-neutral-300 text-xs leading-relaxed">I have completed the structural takeoff for S-101. I detected 42 continuous footings and 18 grade beams.</p>
-                                    <div class="mt-2 p-2 rounded bg-neutral-900/50 border border-neutral-800/50 inline-block">
-                                        <p class="text-[0.65rem] font-mono text-neutral-400">Total Concrete: 470.5 CY</p>
-                                    </div>
+
+                                    <p class="text-neutral-300 text-xs leading-relaxed">
+                                        I have completed the structural takeoff for S-101.
+                                    </p>
                                 </div>
                             </div>
-
-                            <!-- System Alert / Risk -->
-                            <div class="flex gap-3">
-                                <div class="w-6 h-6 rounded border border-amber-900/50 bg-amber-950/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <iconify-icon icon="solar:danger-triangle-linear" class="text-amber-500 text-[10px]"></iconify-icon>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="text-neutral-300 text-xs leading-relaxed">Risk detected: The spec book calls for 4000 PSI concrete, but sheet S-101 general notes specify 5000 PSI for grade beams.</p>
-                                    <button class="mt-2 text-[0.65rem] font-medium bg-neutral-900 hover:bg-neutral-800 px-2 py-1 rounded border border-neutral-700 text-neutral-300 transition-colors">Generate RFI Draft</button>
-                                </div>
-                            </div>
-
-                            <!-- User Message -->
-                            <div class="flex gap-3 flex-row-reverse">
-                                <div class="w-6 h-6 rounded bg-neutral-800 border border-neutral-700 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-medium text-neutral-400">
-                                    JD
-                                </div>
-                                <div class="flex-1 text-right">
-                                    <p class="text-neutral-400 text-xs leading-relaxed">Apply historical pricing for the 5000 PSI mix and update line item 1.2.</p>
-                                </div>
-                            </div>
-
-                             <!-- AI Action Indicator -->
-                             <div class="flex gap-3">
-                                <div class="w-6 h-6 rounded border border-cyan-900/50 bg-cyan-950/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                    <iconify-icon icon="solar:cpu-linear" class="text-cyan-500 text-[10px]"></iconify-icon>
-                                </div>
-                                <div class="flex-1">
-                                    <p class="text-cyan-600/80 text-xs font-mono animate-pulse">Updating pricing matrix...</p>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <!-- Input Area -->
+                        <!-- INPUT -->
                         <div class="p-3 border-t border-neutral-900 bg-neutral-950">
+
                             <div class="relative flex items-center">
-                                <input type="text" placeholder="Command ALMA..." class="w-full bg-neutral-900 border border-neutral-800 rounded-md py-2 pl-3 pr-10 text-xs text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-cyan-900/50 transition-colors">
-                                <button class="absolute right-2 text-neutral-500 hover:text-neutral-300 p-1">
-                                    <iconify-icon icon="solar:plain-2-linear" width="16"></iconify-icon>
+
+                                <input
+                                    type="text"
+                                    placeholder="Command ALMA..."
+                                    class="w-full bg-neutral-900 border border-neutral-800 rounded-md py-2 pl-3 pr-10 text-xs text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-cyan-900/50 transition-colors"
+                                />
+
+                                <button
+                                    class="absolute right-2 text-neutral-500 hover:text-neutral-300 p-1">
+
+                                    <iconify-icon icon="solar:plain-2-linear"
+                                        width="16"></iconify-icon>
                                 </button>
                             </div>
-                            <div class="flex gap-2 mt-2">
-                                <button class="text-[0.6rem] font-mono text-neutral-500 hover:text-neutral-300 px-1.5 py-0.5 rounded border border-neutral-800 hover:bg-neutral-900 transition-colors">/summarize</button>
-                                <button class="text-[0.6rem] font-mono text-neutral-500 hover:text-neutral-300 px-1.5 py-0.5 rounded border border-neutral-800 hover:bg-neutral-900 transition-colors">/analyze_specs</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. AI ASSISTANT VIEW (Global Terminal) -->
-            <div id="view-ai" class="absolute inset-0 hidden opacity-0 transition-opacity duration-300 flex flex-col bg-[#050505]">
-                <div class="p-6 pb-0 flex-shrink-0 flex justify-between items-center z-10 relative">
-                    <div>
-                        <h1 class="text-2xl font-medium tracking-tight text-neutral-50 flex items-center gap-3">
-                            <iconify-icon icon="solar:cpu-linear" class="text-cyan-500/50"></iconify-icon>
-                            ALMA Autonomous Core
-                        </h1>
-                        <p class="text-sm font-mono text-neutral-600 mt-1 uppercase tracking-widest">Global System Status: Nominal</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-xs font-mono text-neutral-500">Active Agents: <span class="text-neutral-200">4</span></p>
-                        <p class="text-xs font-mono text-neutral-500">Tasks Executed (24h): <span class="text-neutral-200">14,029</span></p>
-                    </div>
-                </div>
-
-                <div class="flex-1 relative flex items-center justify-center overflow-hidden">
-                    <!-- Visualization -->
-                    <div class="absolute inset-0 flex items-center justify-center opacity-30">
-                        <div class="w-[500px] h-[500px] border border-neutral-800/30 rounded-full animate-[spin_60s_linear_infinite] relative">
-                            <div class="absolute top-0 left-1/2 w-2 h-2 bg-cyan-500 rounded-full shadow-[0_0_10px_#06b6d4]"></div>
-                            <div class="absolute bottom-1/4 right-0 w-1.5 h-1.5 bg-neutral-400 rounded-full"></div>
-                        </div>
-                        <div class="absolute w-[300px] h-[300px] border border-neutral-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse] relative">
-                             <div class="absolute bottom-0 left-1/4 w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_10px_#10b981]"></div>
-                        </div>
-                        <div class="absolute w-[100px] h-[100px] bg-neutral-900 rounded-full shadow-[0_0_50px_rgba(255,255,255,0.05)] border border-neutral-800 flex items-center justify-center">
-                            <iconify-icon icon="solar:magic-stick-3-linear" class="text-neutral-600 text-2xl"></iconify-icon>
                         </div>
                     </div>
 
-                    <!-- Terminal Overlay -->
-                    <div class="w-full max-w-4xl h-[60%] bg-neutral-950/80 backdrop-blur-xl border border-neutral-800/50 rounded-xl relative z-10 flex flex-col overflow-hidden shadow-2xl">
-                        <div class="h-8 border-b border-neutral-800/50 flex items-center px-4 gap-2 bg-neutral-900/50">
-                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700"></div>
-                            <div class="w-2.5 h-2.5 rounded-full bg-neutral-700"></div>
-                            <span class="ml-2 text-[0.6rem] font-mono text-neutral-500">alma_sys_log.sh</span>
-                        </div>
-                        <div class="flex-1 p-4 font-mono text-xs overflow-y-auto custom-scrollbar space-y-1">
-                            <p class="text-neutral-500">[14:02:11] <span class="text-cyan-600/80">INFO</span> Initiating background scan of estimating database...</p>
-                            <p class="text-neutral-500">[14:02:15] <span class="text-cyan-600/80">INFO</span> Connected to Index Pricing API. Syncing 45,000 SKUs.</p>
-                            <p class="text-neutral-500">[14:03:01] <span class="text-emerald-600/80">SUCCESS</span> Sync complete. Detected 12 material price variances &gt; 5%.</p>
-                            <p class="text-neutral-500">[14:05:22] <span class="text-amber-600/80">WARN</span> Agent 'Estimator-02' halted on Project PRJ-9031. Ambiguous structural note.</p>
-                            <p class="text-neutral-500">[14:05:23] <span class="text-cyan-600/80">INFO</span> Resolving ambiguity via historical RFI database...</p>
-                            <p class="text-neutral-500">[14:05:28] <span class="text-emerald-600/80">SUCCESS</span> Resolution found (Confidence 94%). Resuming takeoff.</p>
-                            <p class="text-neutral-500 animate-pulse mt-4">_</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. ANALYTICS VIEW -->
-            <div id="view-analytics" class="absolute inset-0 overflow-y-auto p-6 hidden opacity-0 transition-opacity duration-300">
-                <div class="mb-6">
-                    <h1 class="text-2xl font-medium tracking-tight text-neutral-50">Intelligence Analytics</h1>
-                    <p class="text-sm text-neutral-500 mt-1">Performance metrics and forecasting.</p>
-                </div>
-                <!-- Complex Charts Layout Placeholder -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div class="h-64 rounded-xl border border-neutral-800/60 bg-neutral-900/20 p-5 flex flex-col justify-between">
-                        <h3 class="text-sm font-medium text-neutral-200">Bid Win/Loss Ratio</h3>
-                        <div class="flex-1 flex items-center justify-center">
-                            <!-- Circular Chart Mockup -->
-                            <div class="relative w-32 h-32 rounded-full border-[16px] border-neutral-800 flex items-center justify-center">
-                                <div class="absolute inset-[-16px] rounded-full border-[16px] border-neutral-400 border-r-transparent border-b-transparent transform -rotate-45"></div>
-                                <span class="text-xl font-mono text-neutral-200">28%</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-center gap-4 text-xs font-mono text-neutral-500">
-                            <span class="flex items-center gap-1"><div class="w-2 h-2 bg-neutral-400 rounded-sm"></div> Won (28%)</span>
-                            <span class="flex items-center gap-1"><div class="w-2 h-2 bg-neutral-800 rounded-sm"></div> Lost (72%)</span>
-                        </div>
-                    </div>
-                    <div class="h-64 rounded-xl border border-neutral-800/60 bg-neutral-900/20 p-5 flex flex-col">
-                        <h3 class="text-sm font-medium text-neutral-200 mb-4">Estimator Velocity (Items/Hr)</h3>
-                        <div class="flex-1 flex items-end gap-4">
-                            <!-- Bar Chart -->
-                            <div class="flex-1 bg-neutral-800 h-[30%] rounded-t relative group"><span class="absolute -top-5 left-1/2 -translate-x-1/2 text-[0.6rem] font-mono text-neutral-500 opacity-0 group-hover:opacity-100">Manual</span></div>
-                            <div class="flex-1 bg-cyan-900/30 border border-cyan-800/50 h-[85%] rounded-t relative group shadow-[0_0_15px_rgba(34,211,238,0.05)]"><span class="absolute -top-5 left-1/2 -translate-x-1/2 text-[0.6rem] font-mono text-cyan-500 opacity-0 group-hover:opacity-100">With AI</span></div>
-                        </div>
-                        <div class="flex justify-between mt-2 text-[0.65rem] font-mono text-neutral-600">
-                            <span>Pre-ALMA</span>
-                            <span>Post-ALMA</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. SETTINGS VIEW -->
-            <div id="view-settings" class="absolute inset-0 overflow-y-auto p-6 hidden opacity-0 transition-opacity duration-300">
-                 <div class="mb-6">
-                    <h1 class="text-2xl font-medium tracking-tight text-neutral-50">System Configuration</h1>
-                </div>
-                <div class="max-w-3xl flex gap-8">
-                    <!-- Settings Sidebar -->
-                    <div class="w-48 space-y-1">
-                        <button class="w-full text-left px-3 py-1.5 text-sm font-medium text-neutral-200 bg-neutral-900/50 rounded-md">General</button>
-                        <button class="w-full text-left px-3 py-1.5 text-sm font-normal text-neutral-500 hover:text-neutral-300">AI Parameters</button>
-                        <button class="w-full text-left px-3 py-1.5 text-sm font-normal text-neutral-500 hover:text-neutral-300">Team &amp; Roles</button>
-                        <button class="w-full text-left px-3 py-1.5 text-sm font-normal text-neutral-500 hover:text-neutral-300">Integrations</button>
-                    </div>
-                    <!-- Settings Content -->
-                    <div class="flex-1 space-y-8">
-                        <section class="space-y-4">
-                            <h3 class="text-sm font-medium text-neutral-300 border-b border-neutral-800 pb-2">Organization Profile</h3>
-                            <div class="space-y-3">
-                                <div>
-                                    <label class="block text-xs text-neutral-500 mb-1">Company Name</label>
-                                    <input type="text" value="Apex Construction Group" class="w-full bg-neutral-900/50 border border-neutral-800 text-neutral-200 text-sm rounded-md px-3 py-2 focus:outline-none focus:border-neutral-600">
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-neutral-500 mb-1">Default Markup (%)</label>
-                                    <input type="text" value="15.0" class="w-32 bg-neutral-900/50 border border-neutral-800 text-neutral-200 text-sm rounded-md px-3 py-2 focus:outline-none focus:border-neutral-600 font-mono">
-                                </div>
-                            </div>
-                        </section>
-                        <section class="space-y-4">
-                            <h3 class="text-sm font-medium text-neutral-300 border-b border-neutral-800 pb-2">ALMA Core Settings</h3>
-                            <div class="space-y-4">
-                                <label class="flex items-center gap-3 cursor-pointer">
-                                    <!-- Custom Toggle -->
-                                    <div class="relative">
-                                        <input type="checkbox" class="sr-only" checked="">
-                                        <div class="block bg-neutral-800 w-8 h-4 rounded-full border border-neutral-700"></div>
-                                        <div class="dot absolute left-1 top-1 bg-cyan-400 w-2 h-2 rounded-full transition transform translate-x-4"></div>
-                                    </div>
-                                    <div class="text-sm text-neutral-300">Autonomous Pricing Sync</div>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer">
-                                    <div class="relative">
-                                        <input type="checkbox" class="sr-only" checked="">
-                                        <div class="block bg-neutral-800 w-8 h-4 rounded-full border border-neutral-700"></div>
-                                        <div class="dot absolute left-1 top-1 bg-cyan-400 w-2 h-2 rounded-full transition transform translate-x-4"></div>
-                                    </div>
-                                    <div class="text-sm text-neutral-300">Auto-Generate Scope Narratives</div>
-                                </label>
-                            </div>
-                        </section>
-                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
+    <!-- STYLES -->
     <style>
-        /* Custom Utilities */
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
             height: 6px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #262626; /* neutral-800 */
+            background: #262626;
             border-radius: 10px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #404040; /* neutral-700 */
+            background: #404040;
+        }
+
+        @media (max-width: 1024px) {
+
+            body {
+                overflow: hidden;
+            }
+
+            #view-workspace {
+                overflow-y: auto;
+            }
+
+            .custom-scrollbar {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table {
+                min-width: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            header {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .h-14 {
+                height: 56px;
+            }
+
+            .text-2xl {
+                font-size: 1.4rem !important;
+            }
         }
     </style>
 
+    <!-- SCRIPT -->
     <script>
-        // Simple View Router Simulation
+
         function switchView(viewId) {
-            // Get all views
-            const views = document.querySelectorAll('main > div > div[id^="view-"]');
-            // Hide all views and reset opacity
+
+            const views = document.querySelectorAll('[id^="view-"]');
+
             views.forEach(view => {
                 view.classList.add('hidden');
                 view.classList.remove('opacity-100');
                 view.classList.add('opacity-0');
             });
 
-            // Show selected view
             const targetView = document.getElementById('view-' + viewId);
+
             if (targetView) {
+
                 targetView.classList.remove('hidden');
-                // Trigger reflow for transition
+
                 void targetView.offsetWidth;
+
                 targetView.classList.remove('opacity-0');
                 targetView.classList.add('opacity-100');
             }
-
-            // Update Nav State
-            const navBtns = document.querySelectorAll('#main-nav .nav-btn');
-            navBtns.forEach(btn => {
-                // Reset styles
-                btn.classList.remove('bg-neutral-900', 'text-neutral-100', 'border-neutral-800/50', 'font-medium');
-                btn.classList.add('text-neutral-400', 'border-transparent', 'font-normal');
-                btn.classList.remove('border');
-                
-                // Icon styling inside nav btn
-                const icon = btn.querySelector('iconify-icon');
-                if(btn.dataset.view !== 'ai' && icon) icon.classList.remove('text-neutral-300'); // specific rule for non-AI
-            });
-
-            const activeBtn = document.querySelector(`#main-nav .nav-btn[data-view="${viewId}"]`);
-            if (activeBtn) {
-                activeBtn.classList.add('bg-neutral-900', 'text-neutral-100', 'border', 'border-neutral-800/50', 'font-medium');
-                activeBtn.classList.remove('text-neutral-400', 'border-transparent', 'font-normal');
-                // AI button specific logic is handled by CSS groups mostly, but ensure base text color is correct
-            }
         }
+
+        // Mobile height fix
+        function setAppHeight() {
+
+            document.documentElement.style.setProperty(
+                '--app-height',
+                `${window.innerHeight}px`
+            );
+        }
+
+        window.addEventListener('resize', setAppHeight);
+
+        setAppHeight();
+
     </script>
 
-</body></html>
+</body>
+</html>
